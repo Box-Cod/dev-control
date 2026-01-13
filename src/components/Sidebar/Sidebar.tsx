@@ -15,9 +15,18 @@ function Sidebar() {
         </div>
         {/* Menu */}
         <nav className="mt-4 space-y-1">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            <Menu size={20} />
-          </button>
+          <SidebarItem
+            className="font-bold"
+            icon={<Menu size={20} />}
+            label={isOpen ? 'DevControl' : ''}
+            isOpen={isOpen}
+            element={
+              <button onClick={() => setIsOpen(!isOpen)}>
+                <Menu size={20} />
+              </button>
+            }
+          />
+
           <SidebarItem
             icon={<Home size={20} />}
             label="Dashboard"
